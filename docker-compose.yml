@@ -1,0 +1,14 @@
+version: "3.9"
+   
+services:
+    web:
+      build: .
+      environment:
+        MYENV: DEALS
+        SECRET: ejyu6s#)+(y*-#q()t#srath3z^%n3ly&#w*e1&)iysthrt8j8
+      volumes:
+        - .:/code
+      command: bash -c "python manage.py migrate
+                     && python manage.py runserver 0.0.0.0:8000"
+      ports:
+        - "8000:8000"
